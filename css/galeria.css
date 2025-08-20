@@ -1,0 +1,261 @@
+/* Paleta de cores rosa */
+:root {
+  --rosa-1: #fde7f0;
+  --rosa-2: #f7c7d9;
+  --rosa-3: #f799b1;
+  --rosa-4: #c66181;
+  --texto: #6b495c;
+  --card-shadow: rgba(199, 104, 132, 0.18);
+}
+
+/* Linha separadora */
+.linha-separadora {
+  height: 3px;
+  width: 100%;
+  background-color: var(--rosa-4);
+  margin-top: 4px;
+  margin-bottom: 16px;
+  border-radius: 2px;
+}
+
+/* Conteúdo principal */
+.container-usuario {
+  max-width: 1200px;
+  margin: 28px auto;
+  padding: 0 16px 60px 16px; /* espaço inferior para o footer */
+  position: relative;
+}
+
+/* Topo do perfil */
+.perfil-top {
+  background: var(--rosa-1);
+  border: 1px solid var(--rosa-2);
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  box-shadow: 0 6px 18px var(--card-shadow);
+}
+
+.perfil-top .avatar {
+  width: 92px;
+  height: 92px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 4px solid #fff;
+  background: linear-gradient(135deg, #fff, #fff0f5);
+}
+
+.perfil-top .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.perfil-top .info h3 {
+  margin: 0;
+  color: var(--rosa-4);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.perfil-top .info p {
+  margin: 4px 0 0 0;
+  color: #9b627a;
+  font-size: 0.95rem;
+}
+
+.perfil-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn-pastel {
+  background: var(--rosa-3);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 8px 14px;
+  transition: background 0.18s;
+}
+
+.btn-pastel:hover {
+  background: var(--rosa-4);
+}
+
+.btn-outline-pastel {
+  background: transparent;
+  color: var(--rosa-4);
+  border: 1.5px solid var(--rosa-2);
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 7px 12px;
+  transition: background 0.18s;
+}
+
+.btn-outline-pastel:hover {
+  background: var(--rosa-2);
+}
+
+/* Área da galeria */
+.titulo-aba {
+  color: var(--rosa-4);
+  font-weight: 800;
+  margin: 18px 0;
+}
+
+/* Grid de cards */
+#galeria-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.card-arte {
+  width: 180px;
+  height: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border: 2px solid var(--rosa-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--rosa-1);
+}
+
+.card-arte:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--rosa-3);
+}
+
+.card-arte img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Modal */
+.modal-header.border-0 {
+  border-bottom: none;
+}
+
+.modal-imagem-wrapper {
+  border: 2px solid var(--rosa-4);
+  border-radius: 8px;
+  padding: 4px;
+  background: #fff;
+  margin-bottom: 10px;
+  max-height: 400px;
+}
+
+.modal-imagem {
+  width: 100%;
+  height: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.modal-informacoes h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--rosa-4);
+}
+
+.modal-informacoes p {
+  font-size: 1rem;
+  margin: 0.3rem 0;
+  color: #9b627a;
+}
+
+.modal-botoes .btn-pastel {
+  background: var(--rosa-4);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 8px 14px;
+  border: none;
+  transition: background 0.2s;
+}
+
+.modal-botoes .btn-pastel:hover {
+  background: var(--rosa-3);
+  color: #fff;
+}
+
+.modal-botoes .btn-outline-danger {
+  border-radius: 10px;
+  font-weight: 700;
+  padding: 8px 14px;
+}
+
+/* Responsividade */
+@media (max-width: 880px) {
+  .perfil-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .perfil-actions {
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .perfil-top .avatar {
+    width: 84px;
+    height: 84px;
+  }
+}
+
+@media (max-width: 520px) {
+  .perfil-top .avatar {
+    width: 76px;
+    height: 76px;
+  }
+
+  .card-arte {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* FOOTER FIXO NA PARTE DE BAIXO DA TELA */
+html, body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-height: 100vh;
+}
+
+main {
+  /* garante que o conteúdo não fique sobreposto pelo footer */
+  padding-bottom: 100px; /* igual ou maior que altura do footer */
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #d94f6d;
+  color: #fff5f8;
+  padding: 1.2rem;
+  text-align: center;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: inset 0 4px 8px rgba(255, 105, 135, 0.3);
+}
