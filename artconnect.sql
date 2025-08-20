@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03/07/2025 às 22:26
+-- Tempo de geração: 20/08/2025 às 22:06
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -44,25 +44,24 @@ CREATE TABLE IF NOT EXISTS `artes` (
   `status` bit(1) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_artista` (`artista_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `artes`
 --
 
 INSERT INTO `artes` (`id`, `titulo`, `descricao`, `imagem`, `preco`, `desconto`, `preco_final`, `artista_id`, `data_publicacao`, `preco_promocao`, `promocao`, `status`) VALUES
-(1, 'aaa', 'AAAAA', '683042924ec07.jpg', 11.00, 0, NULL, 1, '2025-05-23 06:40:34', 0.00, b'0', b'1'),
-(3, 'aaaa', 'aaaaaaaaaaa', '6830464f02806.png', 22.22, 0, NULL, 1, '2025-05-23 06:56:31', 0.00, b'0', b'0'),
-(11, '1', '444', '6830b5d2d21b7.gif', 44.00, 0, 44.00, 1, '2025-05-23 14:52:18', 0.00, b'0', b'0'),
-(13, 'quario', 'ssss', '6830be081e9a4.png', 387.61, 0, 387.61, 1, '2025-05-23 15:27:20', 0.00, b'0', b'0'),
-(16, 'quario', '33', '6830c270bc6a7.gif', 55.00, 0, 55.00, 1, '2025-05-23 15:46:08', 0.00, b'0', b'0'),
-(17, '1', '1', '6830cfa9a0ed0.png', 2.00, 0, 2.00, 1, '2025-05-23 16:42:33', 0.00, b'0', b'0'),
-(18, 'quario', '7556', '6830cfe8f26f1.png', 90.00, 20, 72.00, 1, '2025-05-23 16:43:36', 18.00, b'0', b'0'),
-(19, 'jjyyyuy', '88', '6830d075f2dd3.png', 35.00, 20, 28.00, 1, '2025-05-23 16:45:57', 7.00, b'0', b'0'),
-(20, 'EU NAO AGUENTO MAAAAAAAAAAAAIS', 'eu aguentando', '6830d0d481fff.png', 74.00, 0, 74.00, 1, '2025-05-23 16:47:32', 0.00, b'0', b'0'),
-(21, 'a', '0', '6830d14b02458.png', 0.00, 0, 0.00, 1, '2025-05-23 16:49:31', 0.00, b'0', b'0'),
-(22, 'mamama', 'aaaa', 'OIP.jfif', 789.08, 0, 789.08, 1, '2025-05-23 16:52:53', 0.00, b'0', b'0'),
-(23, 'capivara', 'capibaba', 'OIP.jfif', 124.57, 0, 124.57, 1, '2025-06-18 16:44:56', 0.00, b'0', b'0');
+(1, 'Aurora Mágica', 'Uma pintura digital com cores vibrantes', 'aurora.jpg', 150.00, 10, 135.00, 1, '2025-08-01 10:00:00', 5.00, b'1', b'1'),
+(3, 'Labirinto Místico', 'Ilustração detalhada de labirinto', 'labirinto.jpg', 300.00, 15, 255.00, 5, '2025-08-17 13:35:00', 20.00, b'1', b'1'),
+(11, 'Noite Estrelada', 'Pintura inspirada em Van Gogh', 'noite.jpg', 200.00, 0, 200.00, 3, '2025-08-02 11:00:00', 0.00, b'0', b'1'),
+(13, 'Céu em Chamas', 'Uma ilustração digital com tons quentes', 'ceo.png', 180.00, 20, 144.00, 3, '2025-08-03 12:30:00', 10.00, b'1', b'1'),
+(16, 'Floresta Encantada', 'Arte inspirada em contos de fadas', 'floresta.jpg', 220.00, 0, 220.00, 4, '2025-08-04 09:15:00', 0.00, b'0', b'1'),
+(17, 'Cidade Futurista', 'Ilustração de uma cidade futurística', 'cidade.jpg', 300.00, 15, 255.00, 5, '2025-08-05 14:45:00', 20.00, b'1', b'1'),
+(18, 'Mar Profundo', 'Cena subaquática em aquarela', 'mar.jpg', 130.00, 0, 130.00, 6, '2025-08-06 16:20:00', 0.00, b'0', b'1'),
+(19, 'Rosas Vermelhas', 'Arranjo de flores pintado à mão', 'rosa.jpg', 90.00, 10, 81.00, 7, '2025-08-07 08:50:00', 5.00, b'1', b'1'),
+(20, 'Dragão Imponente', 'Desenho de dragão em pose heroica', 'dragao.jpg', 250.00, 25, 187.50, 27, '2025-08-08 11:30:00', 15.00, b'1', b'1'),
+(21, 'Pôr do Sol', 'Ilustração digital com tons quentes', 'sol.jpg', 120.00, 0, 120.00, 9, '2025-08-09 13:00:00', 0.00, b'0', b'1'),
+(31, 'aaaaaa', 'NAOÉ MINHA', '68a616bf9cc15_quadro-10.png', 22.22, 40, 13.33, 3, '2025-08-20 15:41:03', 8.89, b'1', b'0');
 
 -- --------------------------------------------------------
 
@@ -74,10 +73,8 @@ CREATE TABLE IF NOT EXISTS `arte_tag` (
   `mult_id` int(11) NOT NULL AUTO_INCREMENT,
   `arte_id` int(11) NOT NULL,
   `tag_id` int(11) NOT NULL,
-  PRIMARY KEY (`mult_id`),
-  KEY `arte_id` (`arte_id`),
-  KEY `tag_id` (`tag_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  PRIMARY KEY (`mult_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `arte_tag`
@@ -101,7 +98,11 @@ INSERT INTO `arte_tag` (`mult_id`, `arte_id`, `tag_id`) VALUES
 (15, 22, 5),
 (16, 23, 1),
 (17, 23, 10),
-(18, 24, 10);
+(18, 24, 10),
+(19, 28, 1),
+(20, 29, 8),
+(21, 30, 8),
+(22, 31, 1);
 
 -- --------------------------------------------------------
 
@@ -115,21 +116,27 @@ CREATE TABLE IF NOT EXISTS `cargo` (
   `observacao` varchar(100) DEFAULT NULL,
   `status` bit(1) NOT NULL,
   `data_cadastro` datetime NOT NULL,
-  PRIMARY KEY (`codigo_cargo`),
-  UNIQUE KEY `nome` (`nome`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  PRIMARY KEY (`codigo_cargo`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `cargo`
 --
 
 INSERT INTO `cargo` (`codigo_cargo`, `nome`, `observacao`, `status`, `data_cadastro`) VALUES
-(1, 'Moderador', 'Poder?', b'0', '2025-05-21 19:02:48'),
-(2, 'JOSEFINO', 'AWAWAWA', b'1', '2025-05-23 16:01:49'),
-(3, 'MARIA DO CARMO', 'A', b'1', '2025-05-23 16:01:56'),
-(4, 'addsds', 'sasd', b'1', '2025-05-23 16:02:05'),
-(6, 'aaaaaaaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaaaa', b'1', '2025-06-03 14:57:56'),
-(7, 'Marionetista', 'Marioneta', b'1', '2025-06-16 17:01:01');
+(1, 'Gerente de Projetos', 'Responsável pela gestão de projetos', b'1', '2023-01-10 09:00:00'),
+(2, 'Analista de Marketing', 'Planejamento e execução de campanhas', b'1', '2023-02-15 10:00:00'),
+(3, 'Designer Gráfico', 'Criação de artes e peças visuais', b'1', '2023-03-20 11:30:00'),
+(4, 'Desenvolvedor Web', 'Desenvolvimento de sites e sistemas', b'1', '2023-04-25 14:15:00'),
+(5, 'Analista de Sistemas', 'Suporte e manutenção de sistemas', b'1', '2023-05-30 15:45:00'),
+(6, 'Assistente Administrativo', 'Suporte administrativo e documentação', b'1', '2023-06-05 08:30:00'),
+(8, 'Redator', 'Produção de textos e conteúdos', b'1', '2023-08-18 10:20:00'),
+(9, 'Fotógrafo', 'Registro fotográfico e tratamento de imagens', b'1', '2023-09-22 11:10:00'),
+(10, 'Especialista em SEO', 'Otimização de sites para motores de busca', b'1', '2023-10-30 12:00:00'),
+(11, 'Coordenador de Eventos', 'Planejamento e coordenação de eventos', b'1', '2023-11-15 13:25:00'),
+(12, 'Assistente de RH', 'Recrutamento, seleção e folha de pagamento', b'1', '2023-12-05 14:40:00'),
+(13, 'Programador Mobile', 'Desenvolvimento de aplicativos móveis', b'1', '2024-01-08 15:55:00'),
+(14, 'Editor de Vídeo', 'Edição e pós-produção de vídeos', b'1', '2023-07-12 09:50:00');
 
 -- --------------------------------------------------------
 
@@ -164,40 +171,21 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
   `tipo_acesso` bit(1) NOT NULL,
   `foto` varchar(40) DEFAULT NULL,
   `codigo_cargo` int(2) DEFAULT NULL,
-  PRIMARY KEY (`codigo_funcionario`),
-  UNIQUE KEY `cpf` (`cpf`),
-  UNIQUE KEY `usuario` (`usuario`),
-  KEY `codigo_cargo` (`codigo_cargo`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  PRIMARY KEY (`codigo_funcionario`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `funcionario`
 --
 
 INSERT INTO `funcionario` (`codigo_funcionario`, `nome`, `nome_social`, `data_nascimento`, `sexo`, `estado_civil`, `cpf`, `rg`, `salario`, `endereco`, `numero`, `complemento`, `bairro`, `cidade`, `estado`, `cep`, `telefone_residencial`, `telefone_celular`, `email`, `status`, `data_cadastro`, `usuario`, `senha`, `tipo_acesso`, `foto`, `codigo_cargo`) VALUES
-(1, 'aaaaaaaaa', 'aaaaaaaaaaaaaaaaaaaaa', '2288-11-11', 'uf', 'solteiro', '111.111', '11.111.111-1', 111.11, 'Rua Maria Isabel da Silva Mattos', 605, 'casa', 'Loteamento Ipanema', 'Piracicaba / SP', 'SP', '13402-303', '(19) 9714-548', '(19) 97145-483', '1111111111@1', b'1', '2025-05-23 15:07:36', '141', '1111', b'1', '', 1),
-(2, 'Uryan Diego Gonsales', 'Uryan Diego Gonsales', '2005-02-11', 'm', 'solteiro', '441.111.111-11', '11.111.444-4', 4444.44, 'Rua Maria Isabel da Silva Mattos', 605, 'casa', 'Loteamento Ipanema', 'Piracicaba / SP', 'PA', '13402-303', '(19) 9714-548', '(19) 97145-483', 'a@a44', b'1', '2025-05-23 15:15:07', '4444444442', '4444441', b'0', '', 1),
-(3, 'Thomy Jando', 'Thomy Jando', '2001-11-19', 'n', 'solteiro', '222.222.222-22', '22.222.222-2', 244.42, 'Rua Maria Isabel da Silva Mattos', 605, 'casa', 'Loteamento Ipanema', 'Piracicaba / SP', 'SP', '13402-303', '(19) 9714-548', '(19) 97145-483', '33333@2', b'1', '2025-05-23 16:39:00', 'JorginhodaSilva69D4', '222', b'1', '', 3),
-(7, 'Uryan Diego Gonsales', 'Uryan Diego Gonsales', '2005-02-11', 'm', 'solteiro', '441.211.111-11', '11.111.444-4', 4444.44, 'Rua Maria Isabel da Silva Mattos', 605, 'casa', 'Loteamento Ipanema', 'Piracicaba / SP', 'PA', '13402-303', '(19) 9714-548', '(19) 97145-483', 'a@a44', b'1', '2025-05-23 15:15:07', '4444445442', '4444441', b'0', '', 1);
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `perfil`
---
-
-CREATE TABLE IF NOT EXISTS `perfil` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `usuario_id` int(11) DEFAULT NULL,
-  `apelido` varchar(100) DEFAULT NULL,
-  `descricao` text DEFAULT NULL,
-  `foto_perfil` varchar(255) DEFAULT NULL,
-  `instagram` varchar(100) DEFAULT NULL,
-  `twitter` varchar(100) DEFAULT NULL,
-  `ativo` bit(1) DEFAULT b'1',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `usuario_id` (`usuario_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+(1, 'Roberto Mendes', 'Beto Mendes', '1985-07-12', 'M', 'Casado', '123.456.789-00', 'MG-12.345.67', 7200.50, 'Rua das Palmeiras', 120, 'Apto 101', 'Centro', 'Belo Horizonte', 'MG', '30123-456', '(31) 3333-444', '(31) 98877-665', 'roberto.mendes@example.com', b'1', '2023-08-15 08:00:00', 'rmendes', 'rob12345', b'1', 'perfil_roberto.jpg', 1),
+(2, 'Juliana Ramos', 'Ju Ramos', '1990-03-25', 'F', 'Solteira', '234.567.890-11', 'SP-23.456.78', 4800.00, 'Avenida Paulista', 900, 'Sala 502', 'Bela Vista', 'São Paulo', 'SP', '01310-100', '(11) 3333-555', '(11) 97555-889', 'juliana.ramos@example.com', b'1', '2023-05-03 09:30:00', 'jramos', 'juliana4', b'0', 'perfil_juliana.jpg', 2),
+(3, 'Fernando Costa', 'Nando Costa', '1988-11-10', 'M', 'Casado', '345.678.901-22', 'RJ-34.567.89', 4300.00, 'Rua das Laranjeiras', 45, 'Casa', 'Laranjeiras', 'Rio de Janeiro', 'RJ', '22240-001', '(21) 2222-333', '(21) 98888-223', 'fernando.costa@example.com', b'1', '2023-01-10 10:00:00', 'fcosta', 'fernando', b'0', 'perfil_fernando.jpg', 3),
+(4, 'Mariana Lopes', 'Mari Lopes', '1992-05-14', 'F', 'Solteira', '456.789.012-33', 'SC-45.678.90', 5200.50, 'Rua Hercílio Luz', 78, 'Apto 202', 'Centro', 'Florianópolis', 'SC', '88010-001', '(48) 3333-444', '(48) 99999-111', 'mariana.lopes@example.com', b'1', '2023-07-18 08:45:00', 'mlopes', 'mari2025', b'1', 'perfil_mari.jpg', 4),
+(6, 'Patrícia Martins', 'Pat Martins', '1995-08-17', 'F', 'Solteira', '678.901.234-55', 'PE-67.890.12', 3500.00, 'Rua do Sol', 150, 'Casa', 'Boa Vista', 'Recife', 'PE', '50030-000', '(81) 3333-666', '(81) 97555-667', 'patricia.martins@example.com', b'1', '2023-02-12 08:30:00', 'pmartins', 'paty3210', b'0', 'perfil_patricia.jpg', 6),
+(7, 'Bruno Souza', 'Bruninho Souza', '1993-02-28', 'M', 'Solteiro', '789.012.345-66', 'MA-78.901.23', 4200.00, 'Rua das Flores', 25, 'Apto 305', 'Centro', 'São Luís', 'MA', '65010-001', '(98) 3333-777', '(98) 98888-334', 'bruno.souza@example.com', b'1', '2023-11-05 10:15:00', 'bsouza', 'bruno654', b'0', 'perfil_bruno.jpg', 7),
+(8, 'Uryan Diego Gonsales', 'Uryan Diego Gonsales', '2005-02-11', 'm', 'solteiro', '441.181.111-11', '11.011.444-4', 4444.44, 'Rua Maria Isabel da Silva Mattos', 605, 'casa', 'Loteamento Ipanema', 'Piracicaba / SP', 'PA', '13402-303', '(19) 9714-548', '(19) 97145-483', 'uryan@senac.com', b'1', '2025-05-23 15:15:07', '4444484442', '1111', b'0', '8.png', 7);
 
 -- --------------------------------------------------------
 
@@ -209,20 +197,23 @@ CREATE TABLE IF NOT EXISTS `tags` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) DEFAULT NULL,
   `status` bit(1) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `nome` (`nome`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `observacao` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `tags`
 --
 
-INSERT INTO `tags` (`id`, `nome`, `status`) VALUES
-(1, 'Marlom', b'1'),
-(2, 'tori', b'1'),
-(3, 'deluubulu', b'1'),
-(4, 'aaa', b'1'),
-(5, 'uryan', b'1');
+INSERT INTO `tags` (`id`, `nome`, `status`, `observacao`) VALUES
+(1, 'Arte Digital', b'1', 'Trabalhos criados digitalmente'),
+(2, 'Pintura', b'1', 'Obras feitas com tinta em tela'),
+(3, 'Escultura', b'1', 'Trabalhos tridimensionais em diversos materiais'),
+(4, 'Fotografia', b'1', 'Captura e edição de fotos'),
+(5, 'Ilustração', b'1', 'Desenhos manuais ou digitais'),
+(8, 'Artesanato', b'1', 'Trabalhos manuais e feitos à mão'),
+(9, 'aaaaa', b'0', '1'),
+(10, 'Bryan BANHADO', b'1', '1');
 
 -- --------------------------------------------------------
 
@@ -237,28 +228,36 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `email` varchar(100) NOT NULL,
   `senha` varchar(255) NOT NULL,
   `tipo` bit(1) NOT NULL,
-  `cpf` varchar(14) DEFAULT NULL,
+  `cpf` varchar(14) NOT NULL,
   `rg` varchar(20) DEFAULT NULL,
   `data_nascimento` date DEFAULT NULL,
-  `foto` text DEFAULT NULL,
-  `status` bit(1) DEFAULT b'1',
-  `data_cadastro` datetime DEFAULT current_timestamp(),
-  `apelido` varchar(100) DEFAULT NULL,
-  `sexo` char(1) NOT NULL,
+  `foto` varchar(255) DEFAULT NULL,
+  `status` bit(1) NOT NULL,
+  `data_cadastro` datetime NOT NULL,
+  `apelido` varchar(50) DEFAULT NULL,
+  `sexo` char(1) DEFAULT NULL,
+  `descricao` text DEFAULT NULL,
+  `cidade` varchar(40) NOT NULL,
+  `estado` char(2) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  UNIQUE KEY `unique_email` (`email`),
+  UNIQUE KEY `unique_cpf` (`cpf`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `nome_social`, `email`, `senha`, `tipo`, `cpf`, `rg`, `data_nascimento`, `foto`, `status`, `data_cadastro`, `apelido`, `sexo`) VALUES
-(1, 'Uryan Diego Gonsales', 'aaaaaaaaaaaaaaaaa', 'comedor@decervos', '123', b'0', '444.444', '44.444.444-4', '2222-02-02', 'OIP.jfif', b'1', '2025-05-21 16:55:14', 'a', 'N'),
-(3, 'deluubulu', 'aaaaaaaaaaaaaaaaa', 'comedor@decer', '123', b'0', '222.222.222-22', '22.222.222-2', '2222-02-22', 'photo_2025-05-04_09-18-12.jpg', b'1', '2025-05-22 15:23:24', 'Mentinha', 'F'),
-(4, 'aaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaa@a', 'aaaa', b'0', '111.122.222-22', '46.777.777-7', '8811-07-14', '', b'1', '2025-06-03 16:28:24', 'aaaaaaaaaaaaaaaaaaaa', 'N'),
-(5, '76543', '34567890', '1@11', '234567890', b'1', '234.567.890-76', '12.345.678-9', '2001-03-22', '', b'1', '2025-06-03 16:39:01', '23467890', 'M'),
-(6, 'Thomy Jando', '', 'tomyjando@gmail.com', '123456789', b'1', '847.876.543-55', '76.546.995-6', '2012-01-19', '', b'1', '2025-06-16 14:43:12', '', 'M');
+INSERT INTO `usuarios` (`id`, `nome`, `nome_social`, `email`, `senha`, `tipo`, `cpf`, `rg`, `data_nascimento`, `foto`, `status`, `data_cadastro`, `apelido`, `sexo`, `descricao`, `cidade`, `estado`) VALUES
+(1, 'Lucas Pereira', '', 'lucas.pereira@example.com', 'abc123xyz', b'0', '444.444', '44.444.444-4', '1995-07-12', '1.jpeg', b'1', '2025-05-21 16:55:14', 'Lukinhaz', 'M', 'Apaixonado por arte e tecnologia.', 'Belo Horizonte', 'MG'),
+(3, 'Mariana Lopes', 'Mari Lopes', 'mariana.lopes@example.com', 'mari2025', b'1', '222.222.222-22', '22.222.222-2', '1997-11-05', '6.jpeg', b'1', '2025-05-22 15:23:24', 'MariBee', 'F', 'Designer gráfica e pintora digital e mol boiola', 'Florianópolis', 'SC'),
+(4, 'Carlos Henrique', 'Firo Pellegrini', 'carlos.henrique@example.com', 'senha123', b'0', '111.122.222-22', '46.777.777-7', '1990-01-18', '2.png', b'1', '2025-06-03 16:28:24', 'Carlão', 'M', 'Administrador de sistemas e gamer nas horas vagas.', 'Curitiba', 'PR'),
+(5, 'Beatriz Ramos', NULL, 'beatriz.ramos@example.com', 'beatriz789', b'1', '234.567.890-76', '12.345.678-9', '2000-09-10', '7.jpeg', b'1', '2025-06-03 16:39:01', 'BiaR', 'F', 'Fotógrafa e criadora de conteúdo.', 'Piracicaba', 'SP'),
+(6, 'Gabriel Santos', '', 'gabriel.santos@example.com', 'gabriel321', b'1', '847.876.543-55', '76.546.995-6', '1996-06-22', '8.jpeg', b'1', '2025-06-16 14:43:12', 'Gabi', 'M', 'Músico e ilustrador amador.', 'Salvador', 'BA'),
+(7, 'Juliana Pacheco', '', 'juliana.pacheco@example.com', 'ju2025!', b'1', '222.333.525-44', '4444424444', '1999-04-12', '9.jpeg', b'1', '2025-07-16 00:10:53', 'JuP', 'F', 'Artista plástica e escultora.', 'Fortaleza', 'CE'),
+(9, 'Patrícia Martins', '', 'patricia.martins@example.com', 'paty456', b'1', '227.222.222-22', '22.222.222-2', '2001-08-17', '10.jpg', b'1', '2025-07-16 00:30:01', 'Paty', 'F', 'Artista digital especializada em ilustrações 3D.', 'Recife', 'PE'),
+(14, 'Tiago Lima', '', 'tiago.lima@example.com', 'tig789', b'1', '545.542.465-76', '55.576.767-6', '1994-05-30', '4.jpeg', b'1', '2025-07-26 12:52:47', 'Tig', 'M', 'Designer de jogos e animador.', 'Manaus', 'AM'),
+(27, 'Iuri Montebelo', '', 'iurimvo@gmail.com', '111', b'1', '222.626.620-02', '62.666.266-0', '1798-12-19', '', b'1', '2025-08-15 13:31:49', 'IuriMTB', 'M', 'Musico, professor, e uma pessoa altamente dedicada', 'Piracicaba', 'SP');
 
 --
 -- Restrições para tabelas despejadas
@@ -270,18 +269,6 @@ INSERT INTO `usuarios` (`id`, `nome`, `nome_social`, `email`, `senha`, `tipo`, `
 ALTER TABLE `artes`
   ADD CONSTRAINT `artes_ibfk_1` FOREIGN KEY (`artista_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `fk_artista` FOREIGN KEY (`artista_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE;
-
---
--- Restrições para tabelas `funcionario`
---
-ALTER TABLE `funcionario`
-  ADD CONSTRAINT `funcionario_ibfk_1` FOREIGN KEY (`codigo_cargo`) REFERENCES `cargo` (`codigo_cargo`);
-
---
--- Restrições para tabelas `perfil`
---
-ALTER TABLE `perfil`
-  ADD CONSTRAINT `perfil_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
