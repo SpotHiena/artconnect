@@ -1,0 +1,166 @@
+:root {
+  --rosa: #ff6f91;
+  --rosa-escuro: #ff3e6c;
+  --rosa-claro: #ffe4ec;
+  --fundo: #fff5f8;
+  --borda: #ffb6c9;
+  --texto: #444;
+}
+
+/* Container da página */
+.container.py-4 {
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+
+/* Seta de voltar */
+.btn-voltar {
+  font-size: 2rem;
+  color: var(--rosa);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+
+.btn-voltar:hover {
+  color: var(--rosa-escuro);
+}
+
+/* Título */
+h2 {
+  color: var(--rosa);
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+/* Card do formulário */
+.card {
+  background: #fff !important;
+  border: 1px solid var(--borda) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 24px rgba(255, 111, 145, 0.15) !important;
+  padding: 1.5rem 2rem !important;
+  margin-top: 1rem;
+}
+
+/* Foto perfil menor e com borda branca */
+.card .rounded-circle {
+  width: 100px !important;
+  height: 100px !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12) !important;
+  border: 4px solid #fff !important;
+  margin-bottom: 0.8rem !important;
+}
+
+/* File input */
+.card input[type="file"] {
+  background: #fff !important;
+  border-radius: 8px !important;
+  padding: 0.3rem 0.5rem !important;
+}
+
+/* Labels */
+.form-label {
+  color: var(--rosa) !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.3rem !important;
+}
+
+/* Inputs e selects compactos */
+.form-control,
+.form-select {
+  border: 1.8px solid var(--borda) !important;
+  background: var(--fundo) !important;
+  color: var(--texto) !important;
+  border-radius: 12px !important;
+  padding: 0.4rem 0.7rem !important;
+  font-size: 0.9rem !important;
+}
+
+/* Foco nos inputs */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--rosa) !important;
+  box-shadow: 0 0 0 0.25rem rgba(255, 111, 145, 0.25) !important;
+  background: #fff !important;
+  outline: none !important;
+}
+
+/* Espaçamento menor entre campos */
+.mb-3 {
+  margin-bottom: 0.8rem !important;
+}
+
+/* Botões */
+.btn-primary {
+  background-color: var(--rosa) !important;
+  border-color: var(--rosa) !important;
+  font-weight: 700 !important;
+  border-radius: 12px !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 0.9rem !important;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--rosa-escuro) !important;
+  border-color: var(--rosa-escuro) !important;
+}
+
+.btn-danger {
+  border-radius: 12px !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 0.9rem !important;
+}
+
+/* Espaçamento menor entre os botões */
+.d-flex.justify-content-between {
+  gap: 0.5rem;
+}
+
+/* Placeholder cinza */
+.form-control::placeholder {
+  color: #7a6b74 !important;
+  opacity: 0.9 !important;
+}
+
+/* Footer fixo */
+footer {
+    background-color: #d94f6d;
+    color: #fff5f8;
+    padding: 1.2rem;
+    text-align: center;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: inset 0 4px 8px rgba(255, 105, 135, 0.3);
+
+    margin-top: auto; /* Faz ele ficar no final */
+}
+
+/* Responsivo */
+@media (max-width: 576px) {
+  .container.py-4 {
+    padding-top: 1.5rem !important;
+    max-width: 100%;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .form-control,
+  .form-select {
+    font-size: 1rem !important;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 0.8rem 0;
+  }
+}
