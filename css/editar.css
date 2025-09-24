@@ -1,0 +1,181 @@
+
+    :root {
+      --rosa-1: #fde7f0;
+      --rosa-2: #f7c7d9;
+      --rosa-3: #f799b1;
+      --rosa-4: #c66181;
+      --texto: #6b495c;
+      --input-border: #c66181;
+      --btn-bg: #f799b1;
+      --btn-bg-hover: #c66181;
+    }
+
+    .form-container {
+      max-width: 700px;
+      margin: 30px auto;
+      background: var(--rosa-1);
+      padding: 20px 30px;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(199, 104, 132, 0.2);
+      color: var(--texto);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .form-title {
+      color: var(--rosa-4);
+      font-weight: 700;
+      margin-bottom: 24px;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+
+    .btn-voltar {
+      margin-bottom: 16px;
+      color: var(--rosa-4) !important;
+      border-color: var(--rosa-4) !important;
+      font-weight: 600;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn-voltar:hover {
+      background-color: var(--rosa-4) !important;
+      color: white !important;
+    }
+
+    input.form-control,
+    textarea.form-control,
+    select.form-control {
+      border: 2px solid var(--input-border) !important;
+      border-radius: 10px !important;
+      padding: 10px !important;
+      font-size: 1rem !important;
+      color: var(--texto) !important;
+      background-color: #fff !important;
+      transition: border-color 0.3s;
+    }
+
+    input.form-control:focus,
+    textarea.form-control:focus,
+    select.form-control:focus {
+      border-color: var(--rosa-3) !important;
+      box-shadow: 0 0 6px var(--rosa-3) !important;
+      outline: none !important;
+      background-color: #fff !important;
+      color: var(--texto) !important;
+    }
+
+    label.form-label,
+    .form-label {
+      color: var(--rosa-4);
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: inline-block;
+    }
+
+    /* Estilo para a prévia */
+    .preview {
+      margin-bottom: 12px;
+      text-align: center;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid var(--rosa-4);
+      border-radius: 10px;
+      background-color: white;
+      padding: 10px;
+    }
+
+    .preview img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .radio-promo .form-check-label {
+      color: var(--rosa-4);
+      font-weight: 600;
+    }
+
+    .radio-promo .form-check-input:checked + label {
+      color: var(--rosa-3);
+    }
+
+    .precios-linha {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .precios-linha > div {
+      flex: 1 1 200px;
+    }
+
+    .input-group-text {
+      background-color: var(--rosa-2) !important;
+      border: 2px solid var(--input-border) !important;
+      color: var(--rosa-4) !important;
+      font-weight: 700;
+      border-radius: 0 10px 10px 0 !important;
+    }
+
+    input#desconto[disabled] {
+      background-color: var(--rosa-2) !important;
+      color: var(--rosa-4) !important;
+      cursor: not-allowed;
+    }
+
+    #mensagem_erro {
+      font-weight: 700;
+      color: #b00020 !important;
+    }
+
+    .btn-laranja {
+      background-color: var(--btn-bg) !important;
+      color: white !important;
+      font-weight: 700 !important;
+      padding: 12px 24px !important;
+      border: none !important;
+      border-radius: 10px !important;
+      cursor: pointer !important;
+      transition: background-color 0.3s;
+      display: inline-block;
+      min-width: 180px;
+    }
+
+    .btn-laranja:hover,
+    .btn-laranja:focus {
+      background-color: var(--btn-bg-hover) !important;
+      outline: none !important;
+      color: white !important;
+    }
+
+    .select2-container--default .select2-selection--multiple {
+      border: 2px solid var(--input-border) !important;
+      border-radius: 10px !important;
+      background-color: #fff !important;
+      padding: 6px !important;
+      min-height: 44px;
+    }
+
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+      background-color: var(--rosa-3) !important;
+      border: none !important;
+      color: white !important;
+      padding: 3px 10px !important;
+      border-radius: 10px !important;
+      margin: 2px !important;
+      font-weight: 700 !important;
+    }
+
+    .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+      color: white !important;
+      margin-right: 6px !important;
+    }
+
+    @media (max-width: 576px) {
+      .precos-linha {
+        flex-direction: column;
+      }
+    }

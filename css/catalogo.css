@@ -1,0 +1,273 @@
+/* Estilo geral do catálogo */
+.catalogo {
+  max-width: 1200px;
+  margin: 30px auto 50px auto;
+  padding: 0 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #6a4050; /* rosa escuro pastel */
+}
+
+/* Título da seção */
+.catalogo h2 {
+  font-size: 2rem;
+  color: #c66181;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Filtros do catálogo */
+.filtros-catalogo .form-control {
+  border: 1.8px solid #f7c7d9;
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  color: #9e5571;
+  background-color: #fde7f0;
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+.filtros-catalogo .form-control:focus {
+  border-color: #f799b1;
+  box-shadow: 0 0 6px #f799b1aa;
+  outline: none;
+}
+
+/* Botões Filtrar e Limpar */
+.filtros-catalogo button[type="submit"],
+.filtros-catalogo a.btn-secondary {
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+/* Botão Filtrar - Rosa principal */
+.filtros-catalogo button[type="submit"] {
+  background-color: #c66181 !important; /* rosa da paleta */
+  color: white !important;
+  border: none !important;
+  margin-right: 10px;
+}
+
+.filtros-catalogo button[type="submit"]:hover {
+  background-color: #a34d67 !important; /* tom mais escuro no hover */
+}
+
+/* Botão Limpar - Rosa clarinho */
+.filtros-catalogo a.btn-secondary {
+  background-color: #fde7f0 !important; /* rosa clarinho */
+  color: #c66181 !important;
+  border: 1.8px solid #c66181 !important;
+}
+
+.filtros-catalogo a.btn-secondary:hover {
+  background-color: #f799b1 !important; /* rosa médio no hover */
+  color: white !important;
+  text-decoration: none;
+}
+
+/* Container dos cards usando flexbox */
+.row.mt-4.justify-content-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 1.5rem !important;
+}
+
+/* Cards do catálogo */
+.catalogo-card {
+  background-color: #fff0f5;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(199, 104, 132, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  flex: 1 1 250px; /* responsivo */
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.catalogo-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Badge promoção */
+.badge-success {
+  background-color: #f799b1 !important;
+  color: white !important;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 5px 12px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+}
+
+/* Imagem da arte */
+.catalogo-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Conteúdo dentro do card */
+.catalogo-card .conteudo {
+  padding: 12px 14px;
+  color: #6a4050;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.catalogo-card h5 {
+  font-weight: 700;
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+}
+
+.catalogo-card small {
+  color: #b47d8e;
+  font-style: italic;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.catalogo-card p {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  color: #8c4f67;
+}
+
+.catalogo-card del {
+  color: #b47d8e;
+}
+
+.catalogo-card strong.text-success {
+  color: #c66181;
+  font-size: 1.2rem;
+}
+
+/* Botão “Ver Perfil” */
+.catalogo-card a {
+  margin-top: 12px;
+  display: inline-block;
+  padding: 8px 14px;
+  background: #c66181;
+  color: white;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  text-align: center;
+}
+
+.catalogo-card a:hover {
+  background: #a34d67;
+}
+
+/* Paginação */
+.pagination {
+  margin-top: 40px;
+  justify-content: center !important;
+  display: flex;
+  gap: 8px;
+}
+
+.page-link {
+  color: #9e5571;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1.5px solid #f7c7d9;
+  padding: 6px 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  background-color: #fde7f0;
+  text-decoration: none;
+}
+
+.page-link:hover {
+  background-color: #f799b1;
+  color: white;
+  border-color: #f799b1;
+}
+
+.page-item.active .page-link {
+  background-color: #c66181;
+  border-color: #c66181;
+  color: white;
+  font-weight: 700;
+  cursor: default;
+}
+
+/* Footer */
+.bg-rose {
+  background-color: #d94f6d !important;
+}
+
+footer.bg-rose {
+  color: #fff5f8;
+  padding: 1.2rem;
+  text-align: center;
+  margin-top: 3rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: inset 0 4px 8px rgba(255, 105, 135, 0.3);
+}
+
+/* Responsividade dos filtros: colunas empilhadas no mobile */
+@media (max-width: 767px) {
+  .filtros-catalogo .row > div {
+    margin-bottom: 15px;
+  }
+}
+
+/* Responsividade dos cards: full width em telas pequenas */
+@media (max-width: 575px) {
+  .catalogo-card {
+    max-width: 100% !important;
+    flex-basis: 100% !important;
+  }
+}
+.filtros-toggle {
+  background-color: #c66181; /* rosa principal */
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.filtros-toggle:hover {
+  background-color: #a34d67; /* rosa escuro no hover */
+}
+
+/* Controle da visibilidade da div de filtros */
+.filtros-catalogo {
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.filtros-catalogo.active {
+  display: block;
+}

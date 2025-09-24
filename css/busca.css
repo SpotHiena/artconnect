@@ -1,0 +1,209 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Faz o conteúdo ocupar o espaço disponível */
+.catalogo {
+    flex: 1;
+    max-width: 1200px;
+    margin: 30px auto 50px auto;
+    padding: 0 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #6a4050;
+}
+
+/* Título da seção */
+.catalogo h2 {
+    font-size: 2rem;
+    color: #c66181;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Container dos cards */
+.row.mt-4 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+/* Cards */
+.catalogo-card {
+    flex: 1 1 250px;
+    max-width: 250px;
+    background-color: #fff0f5;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(199, 104, 132, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.catalogo-card:hover {
+    transform: translateY(-6px);
+}
+
+/* Badge promoção */
+.badge-success {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    background-color: #f799b1 !important;
+    color: white !important;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 5px 12px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Imagem da arte */
+.catalogo-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Conteúdo dentro do card */
+.catalogo-card .conteudo {
+    padding: 12px 14px;
+    color: #6a4050;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.catalogo-card h5 {
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-size: 1.1rem;
+}
+
+.catalogo-card small {
+    color: #b47d8e;
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.catalogo-card p {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    color: #8c4f67;
+}
+
+.catalogo-card del {
+    color: #b47d8e;
+}
+
+.catalogo-card strong.text-success {
+    color: #c66181;
+    font-size: 1.2rem;
+}
+
+/* Botão */
+.btn-ver-perfil {
+    margin-top: 12px;
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    background: #f799b1;
+    color: white;
+    font-weight: 700;
+    border-radius: 25px;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.btn-ver-perfil:hover {
+    background: #c66181;
+}
+
+/* Paginação */
+.pagination {
+    margin-top: 40px;
+    justify-content: center !important;
+    display: flex;
+    gap: 8px;
+}
+
+.page-link {
+    color: #9e5571;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1.5px solid #f7c7d9;
+    padding: 6px 14px;
+    background-color: #fde7f0;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-link:hover {
+    background-color: #f799b1;
+    color: white;
+    border-color: #f799b1;
+}
+
+.page-item.active .page-link {
+    background-color: #c66181;
+    border-color: #c66181;
+    color: white;
+    font-weight: 700;
+}
+
+/* Footer fixo */
+footer {
+    background-color: #d94f6d;
+    color: #fff5f8;
+    padding: 1.2rem;
+    text-align: center;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: inset 0 4px 8px rgba(255, 105, 135, 0.3);
+    margin-top: auto;
+}
+
+/* RESPONSIVIDADE */
+
+/* Menor que 991px */
+@media (max-width: 991px) {
+    .catalogo-card {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+}
+
+/* Menor que 576px */
+@media (max-width: 575px) {
+    .catalogo-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .catalogo-card img {
+        height: 160px;
+    }
+
+    .btn-ver-perfil {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+
+    .catalogo h2 {
+        font-size: 1.6rem;
+    }
+}

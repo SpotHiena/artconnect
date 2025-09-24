@@ -1,0 +1,363 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    /* Para empurrar o footer pro final */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo geral para sections */
+section {
+    background-color: #fff0f2; /* rosa clarinho suave, combina com o "Sobre Nós" */
+    padding: 3rem 1rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 20px rgba(255, 105, 135, 0.1);
+    margin-bottom: 2rem;
+    color: #4a4a4a;
+}
+#modalArteVerProduto {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6f91; /* cor rosa similar ao site */
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#modalArteVerProduto:hover {
+    background-color: #ff4c70; /* tom mais escuro ao passar o mouse */
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+
+/* Ajuste para a seção jumbotron para manter seu gradiente escuro */
+section.py-5[style*="linear-gradient"] {
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    color: white;
+    text-align: center;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 2rem;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    color: white;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.hero h2 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.hero input.form-control {
+    border-radius: 50px 0 0 50px;
+    padding: 0.8rem 1rem;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.hero button.btn {
+    border-radius: 0 50px 50px 0;
+    padding: 0.8rem 1.5rem;
+    background-color: #ff85a1;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 1rem;
+}
+
+.hero button.btn:hover {
+    background-color: #ff5c85;
+    transform: scale(1.05);
+}
+
+/* Destaques */
+.artistas-destaque .artista-destaque-btn {
+    background: white;
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    width: 100%;
+    display: block;
+    padding: 0;
+}
+
+.artistas-destaque .artista-destaque-btn:hover {
+    transform: translateY(-5px);
+}
+
+.artistas-destaque h2 {
+    margin-bottom: 2rem;
+    font-weight: 600;
+    font-size: 2rem;
+    color: #d94f6d;
+}
+
+/* Modal */
+.modal-artista {
+    border-radius: 1rem;
+}
+
+.modal-body-artista {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.modal-img-artista {
+    width: 250px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.modal-info-artista p {
+    font-size: 1.1rem;
+    color: #444;
+}
+
+/* Jumbotron */
+blockquote {
+    font-style: italic;
+    color: #d94f6d;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Sobre Nós */
+.exemplo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+.exemplo img {
+    border-radius: 1.5rem;
+    max-width: 350px;
+    box-shadow: 0 8px 20px rgba(255, 105, 135, 0.25);
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.exemplo h3 {
+    color: #d94f6d;
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.exemplo p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #6b3a47;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+/* Dúvidas */
+#form-duvidas {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+#form-duvidas input,
+#form-duvidas textarea {
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+}
+
+#form-duvidas button {
+    width: 100%;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    background-color: #ff85a1;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+#form-duvidas button:hover {
+    background-color: #ff5c85;
+}
+
+/* Footer fixo */
+footer {
+    background-color: #d94f6d;
+    color: #fff5f8;
+    padding: 1.2rem;
+    text-align: center;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: inset 0 4px 8px rgba(255, 105, 135, 0.3);
+
+    margin-top: auto; /* Faz ele ficar no final */
+}
+
+.jumbotron-bobross {
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    color: #f0f0f0;
+    text-align: center;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 2rem;
+    padding: 3rem 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 991px) {
+    .exemplo {
+        flex-direction: column;
+        padding: 0;
+    }
+    .exemplo img {
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    .exemplo p {
+        max-width: 100%;
+    }
+    .hero input.form-control,
+    .hero button.btn {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    #form-duvidas {
+        padding: 1.5rem 1rem;
+    }
+    #form-duvidas button {
+        font-size: 1rem;
+    }
+    .exemplo h3 {
+        font-size: 1.8rem;
+    }
+    .exemplo p {
+        font-size: 1.1rem;
+    }
+    footer {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+}
+/* -------- RESPONSIVIDADES ADICIONAIS -------- */
+
+/* Extra pequeno, celulares 320px - 425px */
+@media (max-width: 425px) {
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+    .hero input.form-control,
+    .hero button.btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.8rem;
+    }
+    .artistas-destaque h2 {
+        font-size: 1.6rem;
+    }
+    .artistas-destaque .artista-destaque-btn {
+        padding: 0.5rem;
+    }
+    blockquote {
+        font-size: 1.5rem;
+    }
+    .exemplo h3 {
+        font-size: 1.6rem;
+    }
+    .exemplo p {
+        font-size: 1rem;
+    }
+}
+
+/* Pequenos dispositivos (modo paisagem) 576px - 767px */
+@media (min-width: 576px) and (max-width: 767px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+    .hero input.form-control,
+    .hero button.btn {
+        font-size: 0.95rem;
+    }
+    .artistas-destaque h2 {
+        font-size: 1.8rem;
+    }
+    .exemplo h3 {
+        font-size: 2rem;
+    }
+    .exemplo p {
+        font-size: 1.15rem;
+    }
+}
+
+/* Tablets e pequenos desktops 768px - 991px já está parcialmente tratado */
+/* Para ajustes finos */
+@media (min-width: 768px) and (max-width: 991px) {
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+    .artistas-destaque h2 {
+        font-size: 1.9rem;
+    }
+    .exemplo h3 {
+        font-size: 2.1rem;
+    }
+}
+
+/* Grandes desktops 1200px+ */
+@media (min-width: 1200px) {
+    .hero h2 {
+        font-size: 3rem;
+    }
+    .artistas-destaque h2 {
+        font-size: 2.2rem;
+    }
+    .exemplo h3 {
+        font-size: 2.5rem;
+    }
+}

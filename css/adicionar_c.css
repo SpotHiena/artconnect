@@ -1,0 +1,117 @@
+/* ==================== RESET & BODY ==================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==================== MAIN ==================== */
+main.container-usuario {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* centraliza o formulário */
+    padding: 40px 20px;
+}
+
+/* ==================== CARD FORMULÁRIO ==================== */
+.perfil-contatos {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 25px 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    max-width: 500px; /* não ocupa toda a página */
+    margin-top: -150px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Título do card */
+.perfil-contatos h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* ==================== FORMULÁRIO ==================== */
+.form-contato {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* dois campos lado a lado */
+    gap: 12px 20px; /* espaçamento vertical e horizontal */
+}
+
+.form-contato label {
+    grid-column: span 2; /* label ocupa toda largura do campo */
+    font-weight: 500;
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.form-contato input,
+.form-contato select {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #fafafa;
+    outline: none;
+    transition: 0.2s;
+    width: 100%;
+}
+
+.form-contato input:focus,
+.form-contato select:focus {
+    border-color: #ff7e5f;
+    box-shadow: 0 2px 8px rgba(255,126,95,0.25);
+}
+
+/* Botão enviar ocupa toda largura do card */
+.form-contato .btn-novo {
+    grid-column: span 2;
+    padding: 10px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 10px;
+}
+
+.form-contato .btn-novo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255,126,95,0.3);
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    background-color: #d94f6d;
+    color: #fff5f8;
+    text-align: center;
+    padding: 12px 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    box-shadow: inset 0 4px 8px rgba(255,105,135,0.3);
+    margin-top: auto;
+}
+
+/* ==================== RESPONSIVO ==================== */
+@media (max-width: 600px) {
+    .form-contato {
+        grid-template-columns: 1fr; /* campos empilhados em mobile */
+    }
+}
