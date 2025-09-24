@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20/08/2025 às 22:06
+-- Tempo de geração: 24/09/2025 às 12:41
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `artes` (
   `status` bit(1) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_artista` (`artista_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `artes`
@@ -60,8 +60,7 @@ INSERT INTO `artes` (`id`, `titulo`, `descricao`, `imagem`, `preco`, `desconto`,
 (18, 'Mar Profundo', 'Cena subaquática em aquarela', 'mar.jpg', 130.00, 0, 130.00, 6, '2025-08-06 16:20:00', 0.00, b'0', b'1'),
 (19, 'Rosas Vermelhas', 'Arranjo de flores pintado à mão', 'rosa.jpg', 90.00, 10, 81.00, 7, '2025-08-07 08:50:00', 5.00, b'1', b'1'),
 (20, 'Dragão Imponente', 'Desenho de dragão em pose heroica', 'dragao.jpg', 250.00, 25, 187.50, 27, '2025-08-08 11:30:00', 15.00, b'1', b'1'),
-(21, 'Pôr do Sol', 'Ilustração digital com tons quentes', 'sol.jpg', 120.00, 0, 120.00, 9, '2025-08-09 13:00:00', 0.00, b'0', b'1'),
-(31, 'aaaaaa', 'NAOÉ MINHA', '68a616bf9cc15_quadro-10.png', 22.22, 40, 13.33, 3, '2025-08-20 15:41:03', 8.89, b'1', b'0');
+(21, 'Pôr do Sol', 'Ilustração digital com tons quentes', 'sol.jpg', 120.00, 0, 120.00, 9, '2025-08-09 13:00:00', 0.00, b'0', b'1');
 
 -- --------------------------------------------------------
 
@@ -74,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `arte_tag` (
   `arte_id` int(11) NOT NULL,
   `tag_id` int(11) NOT NULL,
   PRIMARY KEY (`mult_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `arte_tag`
@@ -101,8 +100,7 @@ INSERT INTO `arte_tag` (`mult_id`, `arte_id`, `tag_id`) VALUES
 (18, 24, 10),
 (19, 28, 1),
 (20, 29, 8),
-(21, 30, 8),
-(22, 31, 1);
+(21, 30, 8);
 
 -- --------------------------------------------------------
 
@@ -137,6 +135,40 @@ INSERT INTO `cargo` (`codigo_cargo`, `nome`, `observacao`, `status`, `data_cadas
 (12, 'Assistente de RH', 'Recrutamento, seleção e folha de pagamento', b'1', '2023-12-05 14:40:00'),
 (13, 'Programador Mobile', 'Desenvolvimento de aplicativos móveis', b'1', '2024-01-08 15:55:00'),
 (14, 'Editor de Vídeo', 'Edição e pós-produção de vídeos', b'1', '2023-07-12 09:50:00');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `contato`
+--
+
+CREATE TABLE IF NOT EXISTS `contato` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) NOT NULL,
+  `rede` varchar(50) NOT NULL,
+  `status` bit(1) NOT NULL DEFAULT b'1',
+  `icone` varchar(100) DEFAULT NULL,
+  `artista_rede` int(11) NOT NULL,
+  `url` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_contato_usuario` (`artista_rede`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `contato`
+--
+
+INSERT INTO `contato` (`id`, `nome`, `rede`, `status`, `icone`, `artista_rede`, `url`) VALUES
+(11, 'bb', 'facebook', b'1', NULL, 3, NULL),
+(12, 'cu gozado', 'twitter', b'1', NULL, 3, 'https://x.com/EguaESuaMae'),
+(13, 'cuzo', 'inkbunny', b'1', NULL, 3, ''),
+(14, 'cuzao', 'furaffinity', b'1', NULL, 3, ''),
+(16, 'AAG', 'PINTREST', b'1', NULL, 3, ''),
+(17, 'CG', 'WHATSAPP', b'1', NULL, 3, ''),
+(18, 'tori', 'x', b'1', NULL, 3, ''),
+(19, 'x', 'X', b'1', NULL, 3, ''),
+(20, 'twitter', 'twitter', b'1', NULL, 3, ''),
+(21, 'a', 'X', b'1', NULL, 3, '');
 
 -- --------------------------------------------------------
 
@@ -239,25 +271,27 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `descricao` text DEFAULT NULL,
   `cidade` varchar(40) NOT NULL,
   `estado` char(2) NOT NULL,
+  `rede_artista` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_email` (`email`),
-  UNIQUE KEY `unique_cpf` (`cpf`)
+  UNIQUE KEY `unique_cpf` (`cpf`),
+  KEY `fk_usuario_contato` (`rede_artista`)
 ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `nome_social`, `email`, `senha`, `tipo`, `cpf`, `rg`, `data_nascimento`, `foto`, `status`, `data_cadastro`, `apelido`, `sexo`, `descricao`, `cidade`, `estado`) VALUES
-(1, 'Lucas Pereira', '', 'lucas.pereira@example.com', 'abc123xyz', b'0', '444.444', '44.444.444-4', '1995-07-12', '1.jpeg', b'1', '2025-05-21 16:55:14', 'Lukinhaz', 'M', 'Apaixonado por arte e tecnologia.', 'Belo Horizonte', 'MG'),
-(3, 'Mariana Lopes', 'Mari Lopes', 'mariana.lopes@example.com', 'mari2025', b'1', '222.222.222-22', '22.222.222-2', '1997-11-05', '6.jpeg', b'1', '2025-05-22 15:23:24', 'MariBee', 'F', 'Designer gráfica e pintora digital e mol boiola', 'Florianópolis', 'SC'),
-(4, 'Carlos Henrique', 'Firo Pellegrini', 'carlos.henrique@example.com', 'senha123', b'0', '111.122.222-22', '46.777.777-7', '1990-01-18', '2.png', b'1', '2025-06-03 16:28:24', 'Carlão', 'M', 'Administrador de sistemas e gamer nas horas vagas.', 'Curitiba', 'PR'),
-(5, 'Beatriz Ramos', NULL, 'beatriz.ramos@example.com', 'beatriz789', b'1', '234.567.890-76', '12.345.678-9', '2000-09-10', '7.jpeg', b'1', '2025-06-03 16:39:01', 'BiaR', 'F', 'Fotógrafa e criadora de conteúdo.', 'Piracicaba', 'SP'),
-(6, 'Gabriel Santos', '', 'gabriel.santos@example.com', 'gabriel321', b'1', '847.876.543-55', '76.546.995-6', '1996-06-22', '8.jpeg', b'1', '2025-06-16 14:43:12', 'Gabi', 'M', 'Músico e ilustrador amador.', 'Salvador', 'BA'),
-(7, 'Juliana Pacheco', '', 'juliana.pacheco@example.com', 'ju2025!', b'1', '222.333.525-44', '4444424444', '1999-04-12', '9.jpeg', b'1', '2025-07-16 00:10:53', 'JuP', 'F', 'Artista plástica e escultora.', 'Fortaleza', 'CE'),
-(9, 'Patrícia Martins', '', 'patricia.martins@example.com', 'paty456', b'1', '227.222.222-22', '22.222.222-2', '2001-08-17', '10.jpg', b'1', '2025-07-16 00:30:01', 'Paty', 'F', 'Artista digital especializada em ilustrações 3D.', 'Recife', 'PE'),
-(14, 'Tiago Lima', '', 'tiago.lima@example.com', 'tig789', b'1', '545.542.465-76', '55.576.767-6', '1994-05-30', '4.jpeg', b'1', '2025-07-26 12:52:47', 'Tig', 'M', 'Designer de jogos e animador.', 'Manaus', 'AM'),
-(27, 'Iuri Montebelo', '', 'iurimvo@gmail.com', '111', b'1', '222.626.620-02', '62.666.266-0', '1798-12-19', '', b'1', '2025-08-15 13:31:49', 'IuriMTB', 'M', 'Musico, professor, e uma pessoa altamente dedicada', 'Piracicaba', 'SP');
+INSERT INTO `usuarios` (`id`, `nome`, `nome_social`, `email`, `senha`, `tipo`, `cpf`, `rg`, `data_nascimento`, `foto`, `status`, `data_cadastro`, `apelido`, `sexo`, `descricao`, `cidade`, `estado`, `rede_artista`) VALUES
+(1, 'Lucas Pereira', '', 'lucas.pereira@example.com', 'abc123xyz', b'0', '444.444', '44.444.444-4', '1995-07-12', '1.jpeg', b'1', '2025-05-21 16:55:14', 'Lukinhaz', 'M', 'Apaixonado por arte e tecnologia.', 'Belo Horizonte', 'MG', NULL),
+(3, 'Mariana Lopes', 'Mari Lopes', 'mariana.lopes@example.com', 'mari2025', b'0', '222.222.222-22', '22.222.222-2', '1997-11-05', '6.jpeg', b'1', '2025-05-22 15:23:24', 'MariBee', 'F', 'Designer gráfica e pintora digital.', 'Florianópolis', 'SC', NULL),
+(4, 'Carlos Henrique', 'Firo Pellegrini', 'carlos.henrique@example.com', 'senha123', b'0', '111.122.222-22', '46.777.777-7', '1990-01-18', '2.png', b'1', '2025-06-03 16:28:24', 'Carlão', 'M', 'Administrador de sistemas e gamer nas horas vagas.', 'Curitiba', 'PR', NULL),
+(5, 'Beatriz Ramos', NULL, 'beatriz.ramos@example.com', 'beatriz789', b'1', '234.567.890-76', '12.345.678-9', '2000-09-10', '7.jpeg', b'1', '2025-06-03 16:39:01', 'BiaR', 'F', 'Fotógrafa e criadora de conteúdo.', 'Piracicaba', 'SP', NULL),
+(6, 'Gabriel Santos', '', 'gabriel.santos@example.com', 'gabriel321', b'1', '847.876.543-55', '76.546.995-6', '1996-06-22', '8.jpeg', b'1', '2025-06-16 14:43:12', 'Gabi', 'M', 'Músico e ilustrador amador.', 'Salvador', 'BA', NULL),
+(7, 'Juliana Pacheco', '', 'juliana.pacheco@example.com', 'ju2025!', b'1', '222.333.525-44', '4444424444', '1999-04-12', '9.jpeg', b'1', '2025-07-16 00:10:53', 'JuP', 'F', 'Artista plástica e escultora.', 'Fortaleza', 'CE', NULL),
+(9, 'Patrícia Martins', '', 'patricia.martins@example.com', 'paty456', b'1', '227.222.222-22', '22.222.222-2', '2001-08-17', '10.jpg', b'1', '2025-07-16 00:30:01', 'Paty', 'F', 'Artista digital especializada em ilustrações 3D.', 'Recife', 'PE', NULL),
+(14, 'Tiago Lima', '', 'tiago.lima@example.com', 'tig789', b'1', '545.542.465-76', '55.576.767-6', '1994-05-30', '4.jpeg', b'1', '2025-07-26 12:52:47', 'Tig', 'M', 'Designer de jogos e animador.', 'Manaus', 'AM', NULL),
+(27, 'Iuri Montebelo', '', 'iurimvo@gmail.com', '111', b'1', '222.626.620-02', '62.666.266-0', '1798-12-19', '', b'1', '2025-08-15 13:31:49', 'IuriMTB', 'M', 'Musico, professor, e uma pessoa altamente dedicada', 'Piracicaba', 'SP', NULL);
 
 --
 -- Restrições para tabelas despejadas
@@ -269,6 +303,18 @@ INSERT INTO `usuarios` (`id`, `nome`, `nome_social`, `email`, `senha`, `tipo`, `
 ALTER TABLE `artes`
   ADD CONSTRAINT `artes_ibfk_1` FOREIGN KEY (`artista_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `fk_artista` FOREIGN KEY (`artista_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE;
+
+--
+-- Restrições para tabelas `contato`
+--
+ALTER TABLE `contato`
+  ADD CONSTRAINT `fk_contato_usuario` FOREIGN KEY (`artista_rede`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE;
+
+--
+-- Restrições para tabelas `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD CONSTRAINT `fk_usuario_contato` FOREIGN KEY (`rede_artista`) REFERENCES `contato` (`id`) ON DELETE SET NULL;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
