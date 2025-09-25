@@ -11,8 +11,8 @@ if (isset($_POST['cadastrar']) && $_POST['cadastrar'] == 'cadastrar_usuario') {
     $email = mysqli_real_escape_string($conexao, $_POST['email']);
     $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
     
-    // TIPO FIXO = 1 (bit)
-    $tipo = 1;
+   
+    $tipo = 0;
 
     $cpf = mysqli_real_escape_string($conexao, $_POST['cpf']);
     $rg = mysqli_real_escape_string($conexao, $_POST['rg']);
