@@ -180,9 +180,9 @@ if (!isset($_SESSION)) {
         <div class="col">
           <select class="form-control" name="sexo" required>
             <option value="">Sexo</option>
-            <option value="Feminino">Feminino</option>
-            <option value="Masculino">Masculino</option>
-            <option value="Outro">Outro</option>
+            <option value="F">Feminino</option>
+            <option value="M">Masculino</option>
+            <option value="O">Outro</option>
           </select>
         </div>
       </div>
